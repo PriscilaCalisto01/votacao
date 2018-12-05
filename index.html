@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vota&ccedil;&atilde;o condominial</title>
 </head>
-<body>
+<body id="bd">
     <div class="container">
         <div>
             <h1>P&aacute;gina de vota&ccedil;&atilde;o de proposta</h1>
@@ -31,7 +31,8 @@
                 Seu Voto:
             </div>
             <div>
-                <input type="text" name="campoNomeAgente" id="campoNomeAgente" size="100">
+              <input type="radio" name="voto" value="S" onclick="votoS()"> Sim<br>
+              <input type="radio" name="voto" value="N" onclick="votoN()"> N&atilde;o<br>
             </div>
             <br>
             <div>
@@ -41,11 +42,11 @@
         </form>
         <div>Cota atual:<span id="atual"></span>
         <div>Cota m&iacute;nima:<span id="minima"></span>
-        <div>Status:<span id="status">Não Aceita!</span>
+        <div>Status:<span id="status">Cota n&atilde;o alcan&ccedil;ada</span>
         <div>Data de Encerramento:<span id="encerramento"></span>
     </div>
-    <script src="conexaoweb3.js"></script>
-    <script src="gremio.js"></script>
+    <script src="js/conexaoweb3.js"></script>
+    <script src="js/gremio.js"></script>
     <script>
         obtemProposta();
     </script>
