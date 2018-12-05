@@ -224,3 +224,32 @@ function obtemProposta() {
 		}
 	});
 }
+
+var voto = -1;
+function votoS() {
+	console.log("votoS");
+	voto = true;
+}
+
+function votoN() {
+	console.log("votoN");
+	voto = false;
+}
+function votar() {
+	if(voto === -1) {
+		alert("Escolha seu voto!");
+		return;
+	}
+	console.log("Voto", voto);
+	gremio.votar(0, true, {from: contaUsuario, gas: 3000000, value: 0}, function (err, resultado) {
+		if (err) {
+			alert("Erro! Registro não realizado");
+			console.log("Erro");
+			console.error(err);
+		} else {
+				console.log("Resultado");
+				document.getElementById('bd').innerHTML = '<h1>Vota&ccedil;&atilde;o computada com sucesso!</h1>';
+				console.log(resultado);
+		}
+	});
+}
